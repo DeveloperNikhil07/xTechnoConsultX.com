@@ -27,7 +27,7 @@ export default function Navbar() {
                         <li className={`${ActiveMenu === "/aboutus" ? "active" : ""}`}><Link href="/aboutus">About</Link></li>
                         <li className={`${ActiveMenu === "/ourservices" ? "active" : ""}`}><Link href="/ourservices">Our Services</Link></li>
                         <li className={`${ActiveMenu === "/ourprojects" ? "active" : ""}`}><Link href="/ourprojects">Our Projects</Link></li>
-                        <li className='cm-button'><Link href="/contact-us">Contact Us</Link></li>
+                        <li className='cm-button'><Link href="/contactus">Contact Us</Link></li>
                     </ul>
                     <button className='toggle-button' onClick={ShowMenuToggleBtn}><FontAwesomeIcon icon={faBars} /></button>
                 </div>
