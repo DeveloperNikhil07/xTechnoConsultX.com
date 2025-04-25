@@ -1,4 +1,9 @@
 @media screen and (max-width:991px) {
+    .banner-wrapper .banner-video video {
+        height: 65vh;
+        min-height: 65vh;
+        max-height: 65vh;
+    }
 
     /* Class add on navbar for show menus */
     navbar.navbar.show-menu .menu {
@@ -48,5 +53,11 @@
 @media screen and (max-width:767px) {
     navbar.navbar.show-menu .menu {
         width: 100%;
+    }
+
+    .banner-wrapper .banner-video video {
+        height: 45vh;
+        min-height: 45vh;
+        max-height: 45vh;
     }
 }
