@@ -1,0 +1,50 @@
+@import url('./header.css');
+@import url('./navbar.css');
+@import url('./variables.css');
+@import url('./common.css');
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+ol,
+ul {
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Common Layout css */
+.container {
+    max-width: 1400px;
+}
+
+/* Banner css */
+.banner-wrapper .banner-video video{
+    height:calc(100vh - 0px);
+    min-height: calc(100vh - 0px);
+    max-height: calc(100vh - 0px);
+    width: 100%;
+    object-fit: cover;
+}

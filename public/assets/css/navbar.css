@@ -1,0 +1,36 @@
+.navbar ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    gap: 45px;
+    width: 100%;
+    align-items: center;
+}
+
+.navbar ul li a {
+    font-weight: 500;
+    font-size: clamp(16px, 1.2vw, 18px);
+    line-height: normal;
+    transition: var(--transition);
+    color: var(--black-color);
+}
+
+.navbar ul li.active a {
+    color: var(--theme-color);
+}
+
+.navbar ul li.cm-button a {
+    color: var(--theme-color);
+    background-color: transparent;
+    border: 2px solid var(--theme-color);
+    transition: var(--transition);
+}
+
+.navbar ul li.cm-button a:hover {
+    background-color: var(--theme-color);
+    color: var(--white-color);
+}
+
+.navbar ul li a:hover {
+    color: var(--theme-color);
+}

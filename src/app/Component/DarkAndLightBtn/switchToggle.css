@@ -1,0 +1,52 @@
+.theme-switch {
+    display: flex;
+    align-items: center;
+    border: 1px solid #182D5B;
+    width: 70px;
+    height: 33px;
+    border-radius: 20px;
+    justify-content: space-between;
+    position: relative;
+    padding: 0.25rem 0.25rem;
+    cursor: pointer;
+    background: #182D5B;
+  }
+  
+  .theme-switch input {
+    display: none;
+  }
+  
+  .theme-switch .ball {
+    position: absolute;
+    background: #fff;
+    left: -2px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    transition: 0.3s all;
+  }
+  
+  .theme-switch svg {
+    height: 20px;
+  }
+  
+  .theme-switch .light-mode,
+  .theme-switch .dark-mode {
+    position: relative;
+    transform: translateY(3px);
+  }
+  
+  .theme-switch .light-mode svg {
+    color: #ffd700;
+  }
+  
+  .theme-switch .dark-mode svg {
+    color: #ffd700;
+    width: 22px;
+  }
+  
+  /* MOVE BALL WHEN CHECKED */
+  .theme-switch input:checked ~ .ball {
+    left: 33px;
+  }
+  

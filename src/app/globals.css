@@ -1,0 +1,74 @@
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+
+
+/* Dark Mode Css */
+body.dark-mode h1, h2, h3, h4, h5, h6, p, a, ol, ul, button {
+  color: var(--white-color) !important;
+  transition: var(--transition);
+}
+
+body.dark-mode header .header-wrapper {
+  background-color: var(--black-color);
+  transition: var(--transition);
+}
+
+/* Exclude links inside the header from the color change */
+body.dark-mode header a:not(.no-dark-theme) {
+  color: inherit !important;
+  transition: var(--transition);
+}
+
+/* Exclude buttons with the class '.no-dark-theme' */
+body.dark-mode button:not(.no-dark-theme) {
+  color: inherit !important;
+  transition: var(--transition);
+}
+
+/* Apply light background when not in dark mode */
+body:not(.dark-mode) header .header-wrapper {
+  background-color: var(--them-light-bg-color);
+  transition: var(--transition);
+  border-bottom: 1px solid;
+}

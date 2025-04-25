@@ -1,0 +1,22 @@
+header.header {
+    position: relative;
+}
+
+header .header-wrapper {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    background: #fff;
+    padding: 10px 0px;
+}
+
+button.toggle-button svg,
+button.toggle-button {
+    background-color: transparent;
+    font-size: 22px;
+    color: var(--white-color);
+    display: none;
+}
+
+/* Nav Bar css for mobile view */
+ 
