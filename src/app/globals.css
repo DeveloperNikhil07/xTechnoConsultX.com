@@ -13,7 +13,6 @@
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
 }
 
 body {
@@ -59,6 +58,10 @@ button {
   transition: var(--transition);
 }
 
+body.dark-mode {
+  background-color: var(--them-dark-bg-color);
+}
+
 body.dark-mode navbar.navbar ul li.active {
   color: var(--theme-color);
 }
@@ -87,4 +90,15 @@ body.dark-mode button:not(.no-dark-theme) {
 /* Apply light background when not in dark mode */
 body:not(.dark-mode) header .header-wrapper {
   transition: var(--transition);
+}
+
+/* Section title */
+body.dark-mode .section-title h2,
+body.dark-mode .section-title h3,
+body.dark-mode .whoweare-content a {
+  color: var(--white-color);
+}
+
+body.dark-mode .section-title p{
+  color: var(--secondary-text-color);
 }

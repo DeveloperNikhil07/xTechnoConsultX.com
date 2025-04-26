@@ -27,7 +27,7 @@ export default function Navbar() {
                         <li className={`${ActiveMenu === "/aboutus" ? "active" : ""}`} onClick={CloseOffcanvasHandle}><Link href="/aboutus">About</Link></li>
                         <li className={`${ActiveMenu === "/ourservices" ? "active" : ""}`} onClick={CloseOffcanvasHandle}><Link href="/ourservices">Our Services</Link></li>
                         <li className={`${ActiveMenu === "/ourprojects" ? "active" : ""}`} onClick={CloseOffcanvasHandle}><Link href="/ourprojects">Our Projects</Link></li>
-                        <li className='cm-button' onClick={CloseOffcanvasHandle}><Link href="/contactus">Contact Us</Link></li>
+                        <li onClick={CloseOffcanvasHandle}><Link href="/contactus" className='cm-button'>Contact Us</Link></li>
                     </ul>
                     <button className='toggle-button' onClick={ShowMenuToggleBtn}><FontAwesomeIcon icon={faBars} /></button>
                 </div>

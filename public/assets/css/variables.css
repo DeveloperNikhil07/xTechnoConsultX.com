@@ -4,7 +4,8 @@
     --secondary-color:#555;
     --black-color:#000;
     --white-color:#fff;
-    --them-dark-bg-color:#13111A;
-
+    --them-dark-bg-color:#1E1E1E;
+    --border-color:#C0C0C0;
+    --secondary-text-color:#c0c0c0;
     --transition:0.3s ease;
 }
