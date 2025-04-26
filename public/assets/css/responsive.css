@@ -56,8 +56,8 @@
     }
 
     .banner-wrapper .banner-video video {
-        height: 45vh;
-        min-height: 45vh;
-        max-height: 45vh;
+        height: 65vh;
+        min-height: 65vh;
+        max-height: 65vh;
     }
 }
