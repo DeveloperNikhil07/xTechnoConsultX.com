@@ -3,11 +3,10 @@ header.header {
 }
 
 header .header-wrapper {
-    position: absolute;
-    z-index: 1;
     width: 100%;
     background: #fff;
     padding: 10px 0px;
+    background-color: var(--black-color);
 }
 
 button.toggle-button svg,

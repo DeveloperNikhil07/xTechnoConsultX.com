@@ -12,7 +12,7 @@
     font-size: clamp(16px, 1.2vw, 18px);
     line-height: normal;
     transition: var(--transition);
-    color: var(--black-color);
+    color: var(--white-color);
 }
 
 .navbar ul li.active a {
@@ -20,7 +20,7 @@
 }
 
 .navbar ul li.cm-button a {
-    color: var(--theme-color);
+    color: var(--white-color);
     background-color: transparent;
     border: 2px solid var(--theme-color);
     transition: var(--transition);

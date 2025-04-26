@@ -44,9 +44,27 @@ a {
 
 
 /* Dark Mode Css */
-body.dark-mode h1, h2, h3, h4, h5, h6, p, a, ol, ul, button {
-  color: var(--white-color) !important;
+body.dark-mode h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+ol,
+ul,
+button {
+  color: var(--white-color);
   transition: var(--transition);
+}
+
+body.dark-mode navbar.navbar ul li.active {
+  color: var(--theme-color);
+}
+
+body.dark-mode navbar.navbar ul li:hover a {
+  color: var(--theme-color);
 }
 
 body.dark-mode header .header-wrapper {
@@ -68,7 +86,5 @@ body.dark-mode button:not(.no-dark-theme) {
 
 /* Apply light background when not in dark mode */
 body:not(.dark-mode) header .header-wrapper {
-  background-color: var(--them-light-bg-color);
   transition: var(--transition);
-  border-bottom: 1px solid;
 }

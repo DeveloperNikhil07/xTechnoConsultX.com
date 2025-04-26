@@ -23,11 +23,11 @@ export default function Navbar() {
                     <ul className='menu'>
                         <div className='offcanvas-overlay d-block d-lg-none' onClick={CloseOffcanvasHandle}></div>
                         <li className='close-btn d-block d-lg-none' onClick={CloseOffcanvasHandle}><FontAwesomeIcon icon={faArrowRightFromBracket} /></li>
-                        <li className={`${ActiveMenu === "/" ? "active" : ""}`}><Link href="/"><FontAwesomeIcon icon={faHouse} className='d-none d-lg-inline'/> Home</Link></li>
-                        <li className={`${ActiveMenu === "/aboutus" ? "active" : ""}`}><Link href="/aboutus">About</Link></li>
-                        <li className={`${ActiveMenu === "/ourservices" ? "active" : ""}`}><Link href="/ourservices">Our Services</Link></li>
-                        <li className={`${ActiveMenu === "/ourprojects" ? "active" : ""}`}><Link href="/ourprojects">Our Projects</Link></li>
-                        <li className='cm-button'><Link href="/contactus">Contact Us</Link></li>
+                        <li className={`${ActiveMenu === "/" ? "active" : ""}`} onClick={CloseOffcanvasHandle}><Link href="/"><FontAwesomeIcon icon={faHouse} className='d-none d-lg-inline'/> Home</Link></li>
+                        <li className={`${ActiveMenu === "/aboutus" ? "active" : ""}`} onClick={CloseOffcanvasHandle}><Link href="/aboutus">About</Link></li>
+                        <li className={`${ActiveMenu === "/ourservices" ? "active" : ""}`} onClick={CloseOffcanvasHandle}><Link href="/ourservices">Our Services</Link></li>
+                        <li className={`${ActiveMenu === "/ourprojects" ? "active" : ""}`} onClick={CloseOffcanvasHandle}><Link href="/ourprojects">Our Projects</Link></li>
+                        <li className='cm-button' onClick={CloseOffcanvasHandle}><Link href="/contactus">Contact Us</Link></li>
                     </ul>
                     <button className='toggle-button' onClick={ShowMenuToggleBtn}><FontAwesomeIcon icon={faBars} /></button>
                 </div>
