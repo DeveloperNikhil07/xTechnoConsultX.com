@@ -29,6 +29,7 @@
         height: 100vh;
         width: calc(100% - 40%);
         transition: var(--transition);
+        z-index: 11;
     }
 
     navbar.navbar ul.menu {
