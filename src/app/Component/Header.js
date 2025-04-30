@@ -13,7 +13,7 @@ export default function Header() {
                 <div className="header-wrapper">
                     <div className="container">
                         <div className="row align-items-center">
-                            <div className="col-3">
+                            <div className="col-7 col-sm-6 col-md-3">
                                 <div className="logo">
                                     <Link href={`/`} className='d-inline-block'>
                                         <Image
@@ -28,7 +28,7 @@ export default function Header() {
                                     </Link>
                                 </div>
                             </div>
-                            <div className='col-9'>
+                            <div className='col-5 col-sm-6 col-md-9'>
                                 <Navbar />
                             </div>
                         </div>

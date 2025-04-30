@@ -6,15 +6,18 @@
     display: inline-block;
 }
 
-.section-title h2,.section-title h3 {
+.section-title h2,
+.section-title h3 {
     font-size: clamp(30px, 2.5vw, 40px);
     font-weight: 700;
     line-height: normal;
     color: var(--them-dark-bg-color);
 }
-.section-title h3{
-    font-size: clamp(28px, 2.2vw, 36px); 
+
+.section-title h3 {
+    font-size: clamp(28px, 2.2vw, 36px);
 }
+
 .section-title p {
     font-size: clamp(16px, 1.5vw, 20px);
     font-weight: 400;
@@ -38,21 +41,23 @@
 }
 
 .pt {
-    padding-top: clamp(50px, 2.5vw, 70px);
+    padding-top: clamp(50px, 4.5vw, 70px);
 }
 
 .pb {
-    padding-bottom: clamp(50px, 2.5vw, 70px);
+    padding-bottom: clamp(50px, 4.5vw, 70px);
 }
 
 .py {
-    padding: clamp(50px, 2.5vw, 70px) 0px;
+    padding: clamp(50px, 4.5vw, 70px) 0px;
 }
 
 .mt {
-    margin-top: clamp(50px, 2.5vw, 70px);
+    margin-top: clamp(50px, 4.5vw, 70px);
 }
 
 .mb {
-    margin-bottom: clamp(50px, 2.5vw, 70px);
+    margin-bottom: clamp(50px, 4.5vw, 70px);
 }
+
+/* Stroke text */

@@ -99,6 +99,10 @@ body.dark-mode .whoweare-content a {
   color: var(--white-color);
 }
 
-body.dark-mode .section-title p{
+body.dark-mode .section-title p {
   color: var(--secondary-text-color);
+}
+
+body.dark-mode .section-bg-mode {
+  background-color: var(--black-color);
 }

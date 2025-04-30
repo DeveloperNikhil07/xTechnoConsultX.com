@@ -6,6 +6,7 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: var(--white-color);
 }
 
 * {
@@ -56,8 +57,36 @@ ul {
 .whoweare-content a {
     margin-top: 30px;
 }
-.whoweare-image img{
+
+.whoweare-image {
+    overflow: hidden;
+}
+
+.whoweare-image img {
     width: 100%;
     height: auto;
     object-fit: cover;
+    transition: var(--transition);
+}
+
+.whoweare-image:hover img {
+    transform: scale(1.3) rotate(-4deg);
+}
+
+/* Skills Counter section */
+
+.skills-counter-wrapper {
+    background-color: var(--light-black-color);
+}
+
+.skills-counter-wrapper .card {
+    background-color: transparent;
+}
+
+.skills-counter-wrapper .card h3 {
+    color: var(--white-color);
+}
+
+.skills-counter-wrapper .card p {
+    color: var(--secondary-text-color);
 }
