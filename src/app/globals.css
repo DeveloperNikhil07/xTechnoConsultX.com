@@ -59,7 +59,7 @@ button {
 }
 
 body.dark-mode {
-  background-color: var(--them-dark-bg-color);
+  background-color: var(--theme-dark-bg-color);
 }
 
 body.dark-mode navbar.navbar ul li.active {
@@ -106,3 +106,8 @@ body.dark-mode .section-title p {
 body.dark-mode .section-bg-mode {
   background-color: var(--black-color);
 }
+
+body.dark-mode .section-bg-gray {
+  background-color: var(--theme-dark-bg-color);
+}
+

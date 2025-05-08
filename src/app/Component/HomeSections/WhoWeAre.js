@@ -11,19 +11,19 @@ export default function WhoWeAre() {
         <>
             <section className='who-we-are-wrapper pt'>
                 <div className='container'>
-                    <div className='row'>
+                    <div data-aos={"zoom-in"} data-aos-delay="100" className='row'>
                         <div className='col-12 text-center section-title'>
                             <span className='subtitle'>Who We Are</span>
                             <h2>Crafting Futures with Excellence.</h2>
                         </div>
                     </div>
                     <div className='row mt-5 align-items-center'>
-                        <div className='col-12 col-md-6'>
-                            <div className='whoweare-image'>
+                        <div data-aos={"slide-up"} data-aos-delay="200" className='col-12 col-md-6'>
+                            <div className='whoweare-image rounded'>
                                 <Image src={`${GetImages}/assets/images/banner-image.jpg`} alt='' unoptimized height={500} width={600} />
                             </div>
                         </div>
-                        <div className='col-12 mt-4 mt-md-0 col-md-6'>
+                        <div data-aos={"slide-up"} data-aos-delay="400" className='col-12 mt-4 mt-md-0 col-md-6'>
                             <div className='whoweare-content section-title'>
                                 <h3>Empowering Progress: Our Story, Your Journey, Shared Excellence.</h3>
                                 <p>Embark on a journey through our narrative, where innovation meets purpose.</p>

@@ -1,6 +1,6 @@
-.section-title .subtitle {
+.subtitle {
     font-size: clamp(16px, 1.5vw, 22px);
-    font-weight: 400;
+    font-weight: 500;
     color: var(--theme-color);
     line-height: normal;
     display: inline-block;
@@ -11,7 +11,7 @@
     font-size: clamp(30px, 2.5vw, 40px);
     font-weight: 700;
     line-height: normal;
-    color: var(--them-dark-bg-color);
+    color: var(--theme-dark-bg-color);
 }
 
 .section-title h3 {
@@ -21,8 +21,12 @@
 .section-title p {
     font-size: clamp(16px, 1.5vw, 20px);
     font-weight: 400;
-    color: var(--them-dark-bg-color);
+    color: var(--theme-dark-bg-color);
     line-height: normal;
+}
+
+.section-title .cm-button {
+    color: var(--theme-dark-bg-color);
 }
 
 .cm-button {
@@ -32,7 +36,9 @@
     border-radius: 4px;
     display: inline-block;
     border: 2px solid var(--theme-color);
-    color: var(--them-dark-bg-color);
+    color: var(--theme-dark-bg-color);
+    font-weight: 500;
+    font-size: clamp(16px, 1.5vw, 18px);
 }
 
 .cm-button:hover {
@@ -60,4 +66,6 @@
     margin-bottom: clamp(50px, 4.5vw, 70px);
 }
 
-/* Stroke text */
+.section-bg-gray{
+    background-color: #f0f0f0;
+}

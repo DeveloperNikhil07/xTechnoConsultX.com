@@ -6,6 +6,7 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Manrope', sans-serif;
     background-color: var(--white-color);
 }
 
@@ -81,12 +82,68 @@ ul {
 
 .skills-counter-wrapper .card {
     background-color: transparent;
+    transition: var(--transition);
+    overflow: hidden;
 }
 
 .skills-counter-wrapper .card h3 {
     color: var(--white-color);
+    transition: var(--transition);
+}
+
+.skills-counter-wrapper .card:hover {
+    transform: translateY(-20px);
+    border-color: var(--theme-color) !important;
+    box-shadow: 0px 30px 127px 40px inset var(--theme-color);
 }
 
 .skills-counter-wrapper .card p {
     color: var(--secondary-text-color);
+}
+
+/* Portfolio slider css */
+.slider-wrapper .slider-card .card-content .portfolio-dec {
+    color: var(--theme-dark-bg);
+    font-weight: 500;
+}
+
+.slider-wrapper .slider-card .card-content .technology-item li img {
+    filter: invert(1);
+}
+
+.slider-wrapper .slider-card .card-content .technology-item li {
+    box-shadow: -5px 5px 8px #ccc;
+    padding: 6px;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.slider-wrapper .slider-card .card-content .technology-item li:hover {
+    transform: scale(1.2);
+}
+
+.slider-wrapper .slick-slider>button {
+    background: var(--theme-color);
+    height: 35px;
+    width: 35px;
+    z-index: 1;
+    border-radius: 50px;
+}
+
+.slider-wrapper .slick-slider>button.slick-prev:before,.slider-wrapper .slick-slider>button.slick-next:before {
+    content: "\f060";
+    font-size: 16px;
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+.slider-wrapper .slick-slider>button.slick-prev{
+    left: 5px;
+    top: 50%;
+}
+.slider-wrapper .slick-slider>button.slick-next{
+    right: 5px;
+    top: 50%;
+}
+.slider-wrapper .slick-slider>button.slick-next:before{
+    content: "\f061";
 }
