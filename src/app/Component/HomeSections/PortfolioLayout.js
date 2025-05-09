@@ -15,8 +15,8 @@ export default function PortfolioLayout() {
         speed: 1000,
         slidesToShow: 1,
         slidesToScroll: 1,
-        autplaySpeed:1000,
-        autoplay:true,
+        autplaySpeed: 1000,
+        autoplay: true,
         responsive: [
             {
                 breakpoint: 767,
