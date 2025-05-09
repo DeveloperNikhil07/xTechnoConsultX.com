@@ -103,7 +103,7 @@ ul {
 
 /* Portfolio slider css */
 .slider-wrapper .slider-card .card-content .portfolio-dec {
-    color: var(--theme-dark-bg);
+    color: var(--theme-dark-bg) !important;
     font-weight: 500;
 }
 
