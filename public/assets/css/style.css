@@ -431,7 +431,8 @@ textarea.input {
 
 }
 
-.information i {
+.information svg {
+    margin-right: 10px;
     color: var(--theme-color);
 }
 
@@ -527,16 +528,6 @@ textarea.input {
 .input.error {
   border-color: #ff4d4f; /* red border on error */
 }
-
-.error-icon {
-  color: #ff4d4f;
-  position: absolute;
-  right: 8px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none; /* click passes through icon */
-}
-
 
 /* contact progress line css */
 .progress-container {

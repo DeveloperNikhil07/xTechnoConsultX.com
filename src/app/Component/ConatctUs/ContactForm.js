@@ -92,7 +92,7 @@ export default function ContactForm({ errors, handleSubmit, handleChange, formDa
                         className={`input ${errors.phone ? "error" : ""}`}
                         onChange={handleChange}
                         value={formData.phone}
-                        maxLength={12} // limit max length to 10 digits
+                        maxLength={12}
                     />
                     <label>Phone</label>
                     <span>Phone</span>

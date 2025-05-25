@@ -2,7 +2,11 @@
 "use client"
 import { useState } from "react"
 import React from "react"
+import Link from "next/link"
 import ContactForm from "../Component/ConatctUs/ContactForm"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faFacebook, faInstagram, faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons"
+import { faEnvelope, faMapMarkedAlt, faPhone } from "@fortawesome/free-solid-svg-icons"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -95,7 +99,7 @@ export default function ContactPage() {
             <div className="form mx-auto">
               {/* Left Info Column */}
               <div className="contact-info">
-                <h3 className="title">Let's get in touch</h3>
+                <h3 className="title">Lets get in touch</h3>
                 <p className="text">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
                   dolorum adipisci recusandae praesentium dicta!
@@ -103,15 +107,15 @@ export default function ContactPage() {
 
                 <div className="info">
                   <div className="information">
-                    <i className="fas fa-map-marker-alt"></i>&nbsp;&nbsp;
+                    <FontAwesomeIcon icon={faMapMarkedAlt} />
                     <p>92 Cherry Drive Uniondale, NY 11553</p>
                   </div>
                   <div className="information">
-                    <i className="fas fa-envelope"></i>&nbsp;&nbsp;
+                    <FontAwesomeIcon icon={faEnvelope} />
                     <p>lorem@ipsum.com</p>
                   </div>
                   <div className="information">
-                    <i className="fas fa-phone"></i>&nbsp;&nbsp;
+                    <FontAwesomeIcon icon={faPhone} />
                     <p>123-456-789</p>
                   </div>
                 </div>
@@ -119,18 +123,18 @@ export default function ContactPage() {
                 <div className="social-media">
                   <p>Connect with us :</p>
                   <div className="social-icons">
-                    <a href="#">
-                      <i className="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#">
-                      <i className="fab fa-twitter"></i>
-                    </a>
-                    <a href="#">
-                      <i className="fab fa-instagram"></i>
-                    </a>
-                    <a href="#">
-                      <i className="fab fa-linkedin-in"></i>
-                    </a>
+                    <Link href="#">
+                      <FontAwesomeIcon icon={faFacebook} />
+                    </Link>
+                    <Link href="#">
+                      <FontAwesomeIcon icon={faTwitter} />
+                    </Link>
+                    <Link href="#">
+                      <FontAwesomeIcon icon={faInstagram} />
+                    </Link>
+                    <Link href="#">
+                      <FontAwesomeIcon icon={faLinkedin} />
+                    </Link>
                   </div>
                 </div>
               </div>
