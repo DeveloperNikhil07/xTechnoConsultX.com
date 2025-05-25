@@ -103,15 +103,15 @@ export default function ContactPage() {
 
                 <div className="info">
                   <div className="information">
-                    <i className="fas fa-map-marker-alt"></i>&nbsp;&nbsp;
+                    <i className="fas fa-map-marker-alt"></i>
                     <p>92 Cherry Drive Uniondale, NY 11553</p>
                   </div>
                   <div className="information">
-                    <i className="fas fa-envelope"></i>&nbsp;&nbsp;
+                    <i className="fas fa-envelope"></i>
                     <p>lorem@ipsum.com</p>
                   </div>
                   <div className="information">
-                    <i className="fas fa-phone"></i>&nbsp;&nbsp;
+                    <i className="fas fa-phone"></i>
                     <p>123-456-789</p>
                   </div>
                 </div>
