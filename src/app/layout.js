@@ -13,6 +13,7 @@ import AddBootstrap from "./BootstrapJs";
 import Header from "./Component/Header";
 import Footer from "./Component/Footer";
 import GetAosAnimation from "./hooks/GetAosAnimation";
+import { Toaster } from "react-hot-toast";
 
 // Meta Items
 export const metadata = {
@@ -31,6 +32,16 @@ export default function RootLayout({ children }) {
         <GetAosAnimation />
         <AddBootstrap />
         <Header />
+        <Toaster
+          position="bottom-right"
+          reverseOrder={false}
+          toastOptions={{
+            style: {
+              borderRadius: '10px',
+              background: '#333',
+              color: '#fff',
+            },
+          }} />
         {children}
         <Footer />
       </body>

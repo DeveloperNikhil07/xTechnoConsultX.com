@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons'
 import TopProgressBar from '../ProgressBar/TopProgressBar'
-export default function ContactForm({ errors, handleSubmit, handleChange, formData }) {
+import toast from 'react-hot-toast'
+import ButtonLoading from '../Loader/ButtonLoading'
+export default function ContactForm({ loading, errors, handleSubmit, handleChange, formData }) {
 
     // Calculate progress based on filled fields
     const totalFields = Object.keys(formData).length
@@ -37,95 +39,100 @@ export default function ContactForm({ errors, handleSubmit, handleChange, formDa
             })
         }
     }, [formData]);
-    
+
     return (
         <>
-            {/* Progress Bar */}
-            {progress > 0 && (
-                <div className="progress-container position-absolute start-0">
-                    <TopProgressBar progress={progress} />
-                </div>
-            )}
-            <form autoComplete="off" onSubmit={handleSubmit}>
-                <h3 className="title">Contact us</h3>
+            <div className="contact-form">
+                <span className="progress-row"></span>
+                <span className="circle one"></span>
+                <span className="circle two"></span>
+                {/* Progress Bar */}
+                {progress > 0 && (
+                    <div className="progress-container position-absolute start-0">
+                        <TopProgressBar progress={progress} />
+                    </div>
+                )}
+                <form autoComplete="off" onSubmit={handleSubmit}>
+                    <h3 className="title">Contact us</h3>
 
-                <div className="input-container" style={{ position: "relative" }}>
-                    <input
-                        type="text"
-                        name="name"
-                        className={`input ${errors.name ? "error" : ""}`}
-                        onChange={handleChange}
-                        value={formData.name}
-                    />
-                    <label>Username</label>
-                    <span>Username</span>
-                    {errors.name && (
-                        <FontAwesomeIcon
-                            icon={faExclamationCircle}
-                            className="error-icon"
+                    <div className="input-container" style={{ position: "relative" }}>
+                        <input
+                            type="text"
+                            name="name"
+                            className={`input ${errors.name ? "error" : ""}`}
+                            onChange={handleChange}
+                            value={formData.name}
                         />
-                    )}
-                </div>
+                        <label>Username</label>
+                        <span>Username</span>
+                        {errors.name && (
+                            <FontAwesomeIcon
+                                icon={faExclamationCircle}
+                                className="error-icon"
+                            />
+                        )}
+                    </div>
 
-                <div className="input-container" style={{ position: "relative" }}>
-                    <input
-                        type="email"
-                        name="email"
-                        className={`input ${errors.email ? "error" : ""}`}
-                        onChange={handleChange}
-                        value={formData.email}
-                    />
-                    <label>Email</label>
-                    <span>Email</span>
-                    {errors.email && (
-                        <FontAwesomeIcon
-                            icon={faExclamationCircle}
-                            className="error-icon"
+                    <div className="input-container" style={{ position: "relative" }}>
+                        <input
+                            type="email"
+                            name="email"
+                            className={`input ${errors.email ? "error" : ""}`}
+                            onChange={handleChange}
+                            value={formData.email}
                         />
-                    )}
-                </div>
+                        <label>Email</label>
+                        <span>Email</span>
+                        {errors.email && (
+                            <FontAwesomeIcon
+                                icon={faExclamationCircle}
+                                className="error-icon"
+                            />
+                        )}
+                    </div>
 
-                <div className="input-container" style={{ position: "relative" }}>
-                    <input
-                        type="tel"
-                        name="phone"
-                        className={`input ${errors.phone ? "error" : ""}`}
-                        onChange={handleChange}
-                        value={formData.phone}
-                        maxLength={12}
-                    />
-                    <label>Phone</label>
-                    <span>Phone</span>
-                    {errors.phone && (
-                        <FontAwesomeIcon
-                            icon={faExclamationCircle}
-                            className="error-icon"
+                    <div className="input-container" style={{ position: "relative" }}>
+                        <input
+                            type="tel"
+                            name="phone"
+                            className={`input ${errors.phone ? "error" : ""}`}
+                            onChange={handleChange}
+                            value={formData.phone}
+                            maxLength={12}
                         />
-                    )}
-                </div>
+                        <label>Phone</label>
+                        <span>Phone</span>
+                        {errors.phone && (
+                            <FontAwesomeIcon
+                                icon={faExclamationCircle}
+                                className="error-icon"
+                            />
+                        )}
+                    </div>
 
-                <div
-                    className="input-container textarea"
-                    style={{ position: "relative" }}
-                >
-                    <textarea
-                        name="message"
-                        className={`input ${errors.message ? "error" : ""}`}
-                        onChange={handleChange}
-                        value={formData.message}
-                    ></textarea>
-                    <label>Message</label>
-                    <span>Message</span>
-                    {errors.message && (
-                        <FontAwesomeIcon
-                            icon={faExclamationCircle}
-                            className="error-icon"
-                        />
-                    )}
-                </div>
+                    <div
+                        className="input-container textarea"
+                        style={{ position: "relative" }}
+                    >
+                        <textarea
+                            name="message"
+                            className={`input ${errors.message ? "error" : ""}`}
+                            onChange={handleChange}
+                            value={formData.message}
+                        ></textarea>
+                        <label>Message</label>
+                        <span>Message</span>
+                        {errors.message && (
+                            <FontAwesomeIcon
+                                icon={faExclamationCircle}
+                                className="error-icon"
+                            />
+                        )}
+                    </div>
 
-                <input type="submit" value="Send" className="btn" />
-            </form>
+                    <button type='submit' className='btn'>{loading ? <><ButtonLoading /></> : 'Submit'}</button>
+                </form>
+            </div>
         </>
     )
 }

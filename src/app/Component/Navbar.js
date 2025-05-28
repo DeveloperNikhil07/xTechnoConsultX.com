@@ -6,7 +6,8 @@ import { usePathname } from 'next/navigation';
 import SwitchDarkAndLightButton from './DarkAndLightBtn/SwitchDarkAndLightButton';
 
 
-export default function Navbar() {
+export default function Navbar({ websiteData }) {
+    const GetNavigationData = websiteData;
     const ActiveMenu = usePathname()
     const [MenuOffcanvas, setMenuOffcanvas] = useState(false)
     const ShowMenuToggleBtn = () => {
@@ -23,11 +24,13 @@ export default function Navbar() {
                     <ul className='menu'>
                         <div className='offcanvas-overlay d-block d-lg-none' onClick={CloseOffcanvasHandle}></div>
                         <li className='close-btn d-block d-lg-none' onClick={CloseOffcanvasHandle}><FontAwesomeIcon icon={faArrowRightFromBracket} /></li>
-                        <li className={`${ActiveMenu === "/" ? "active" : ""}`} onClick={CloseOffcanvasHandle}><Link href="/"><FontAwesomeIcon icon={faHouse} className='d-none d-lg-inline'/> Home</Link></li>
-                        <li className={`${ActiveMenu === "/aboutus" ? "active" : ""}`} onClick={CloseOffcanvasHandle}><Link href="/aboutus">About</Link></li>
-                        <li className={`${ActiveMenu === "/ourservices" ? "active" : ""}`} onClick={CloseOffcanvasHandle}><Link href="/ourservices">Our Services</Link></li>
-                        <li className={`${ActiveMenu === "/ourprojects" ? "active" : ""}`} onClick={CloseOffcanvasHandle}><Link href="/ourprojects">Our Projects</Link></li>
-                        <li onClick={CloseOffcanvasHandle}><Link href="/contactus" className='cm-button'>Contact Us</Link></li>
+                        {GetNavigationData?.menu?.map((item, index) => (
+                            <li key={index} className={`${ActiveMenu === item?.url ? "active" : ""}`} onClick={CloseOffcanvasHandle}>
+                                <Link href={item?.url}>
+                                    {item?.title}
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                     <button className='toggle-button' onClick={ShowMenuToggleBtn}><FontAwesomeIcon icon={faBars} /></button>
                 </div>

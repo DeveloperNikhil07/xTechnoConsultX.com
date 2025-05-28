@@ -1,0 +1,62 @@
+{
+  "header": {
+    "logo": "/logo.svg",
+    "dark_logo": "/dark-logo.svg",
+    "menu": [
+      {
+        "title": "Home",
+        "url": "/",
+        "icon": "faHome"
+      },
+      {
+        "title": "About",
+        "url": "/aboutus"
+      },
+      {
+        "title": "Our Services",
+        "url": "/ourservices"
+      },
+      {
+        "title": "Our Projects",
+        "url": "/ourprojects"
+      },
+      {
+        "title": "Contact Us",
+        "url": "/contactus"
+      }
+    ]
+  },
+  "home": {
+    "hero": {
+      "title": "Welcome to My Website",
+      "subtitle": "We provide awesome services to grow your business.",
+      "buttonText": "Get Started"
+    },
+    "about": {
+      "title": "About Us",
+      "description": "We are a team of professionals delivering high-quality solutions for your business needs."
+    },
+    "services": [
+      {
+        "id": 1,
+        "title": "Web Development",
+        "description": "Creating responsive and modern websites."
+      },
+      {
+        "id": 2,
+        "title": "SEO Optimization",
+        "description": "Improving your site's visibility on search engines."
+      },
+      {
+        "id": 3,
+        "title": "Digital Marketing",
+        "description": "Helping you reach your audience effectively."
+      }
+    ],
+    "contact": {
+      "email": "info@mywebsite.com",
+      "phone": "+1 234 567 890",
+      "address": "123 Main Street, City, Country"
+    }
+  }
+}

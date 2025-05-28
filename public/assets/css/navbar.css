@@ -15,6 +15,18 @@
     color: var(--white-color);
 }
 
+.navbar ul li:last-child a {
+    width: auto;
+    height: auto;
+    padding: 10px 30px;
+    border-radius: 4px;
+    display: inline-block;
+    border: 2px solid var(--theme-color);
+}
+.navbar ul li:last-child:hover a{
+    background-color: var(--theme-color);
+    color: var(--white-color) !important;
+}
 .navbar ul li.active a {
     color: var(--theme-color);
 }

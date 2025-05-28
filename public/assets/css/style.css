@@ -211,8 +211,7 @@ ul {
 .contact-us-wrapper {
     position: relative;
     width: 100%;
-    min-height:calc(100vh - 90px);
-    padding: 1rem;
+    min-height: calc(100vh - 90px);
     background-color: #fafafa;
     overflow: hidden;
     display: flex;
@@ -333,26 +332,6 @@ textarea.input {
     transform: translateY(0);
 }
 
-.btn {
-    padding: 0.8rem 1.3rem;
-    background-color: var(--theme-color);
-    border: 1px solid var(--theme-color);
-    font-size: 1rem;
-    color: var(--white-color);
-    line-height: 1;
-    border-radius: 5px;
-    outline: none;
-    cursor: pointer;
-    transition: 0.3s;
-    margin: 0;
-    width: 100%;
-}
-
-.btn:hover {
-    background-color: var(--light-black-color);
-    color: #fff;
-}
-
 .input-container span {
     position: absolute;
     top: 0;
@@ -373,7 +352,8 @@ textarea.input {
     opacity: 0;
     transition: 0.3s;
     height: 5px;
-    background-image: linear-gradient(to right, #5105e0, #590ae1);;
+    background-image: linear-gradient(to right, #5105e0, #590ae1);
+    ;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -474,10 +454,10 @@ textarea.input {
     content: "";
     position: absolute;
     width: 110px;
-    height: 100px;
+    height: 110px;
     border: 22px solid #4a00e0;
     border-radius: 50%;
-    bottom: -77px;
+    bottom: -150px;
     right: 50px;
     opacity: 0.3;
 }
@@ -514,37 +494,45 @@ textarea.input {
 }
 
 .input-container {
-  position: relative;
+    position: relative;
 }
 
 .input {
-  width: 100%;
-  padding-right: 30px; /* leave space for the icon */
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  transition: border-color 0.3s ease;
+    width: 100%;
+    padding-right: 30px;
+    /* leave space for the icon */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
 }
 
 .input.error {
-  border-color: #ff4d4f; /* red border on error */
+    border-color: #ff4d4f;
+    /* red border on error */
 }
 
 /* contact progress line css */
 .progress-container {
-  height: 6px;
-  width: 100%;
-  background-color: #eee;
-  margin-bottom: 20px;
-  border-radius: 4px;
-  overflow: hidden;
+    height: 6px;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    overflow: hidden;
 }
 
 .progress-row {
-  height: 100%;
-  background-color: #6c63ff;
-  width: 0;
-  transition: width 0.4s ease-in-out, background-color 0.3s ease;
+    height: 100%;
+    background-color: #6c63ff;
+    width: 0;
+    transition: width 0.4s ease-in-out, background-color 0.3s ease;
 }
 
+.input-container svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    color: red;
+}
 
 /* End both contact or Progress css */

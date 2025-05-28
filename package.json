@@ -21,9 +21,11 @@
     "bootstrap": "^5.3.3",
     "js-cookie": "^3.0.5",
     "next": "15.2.3",
+    "nodemailer": "^7.0.3",
     "react": "^19.0.0",
     "react-countup": "^6.5.3",
     "react-dom": "^19.0.0",
+    "react-hot-toast": "^2.5.2",
     "react-slick": "^0.30.3",
     "slick-carousel": "^1.8.1"
   },

@@ -1,31 +1,29 @@
-// app/contact/page.jsx
 "use client"
-import { useState } from "react"
-import React from "react"
-import Link from "next/link"
+import React, { useState } from "react"
 import ContactForm from "../Component/ConatctUs/ContactForm"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faFacebook, faInstagram, faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons"
-import { faEnvelope, faMapMarkedAlt, faPhone } from "@fortawesome/free-solid-svg-icons"
-
+import ContactInfo from "../Component/ConatctUs/ContactInfo"
+import { SendThankYouMail } from "../api/WBGlobalDataApi/ContactUsApi/SendThankYouMail"
+import toast from "react-hot-toast"
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
-  })
+  });
 
   const [errors, setErrors] = useState({})
-  // Handle input change with validation and phone filtering
+
   const handleChange = (e) => {
     const { name, value } = e.target
     let newValue = value
+
     if (name === "phone") {
-      newValue = value.replace(/\D/g, "")
+      newValue = value.replace(/\D/g, "") // Allow only digits
     }
 
     setFormData((prev) => ({ ...prev, [name]: newValue }))
+
     setErrors((prev) => {
       const newErrors = { ...prev }
 
@@ -44,14 +42,12 @@ export default function ContactPage() {
 
         case "phone":
           if (!newValue.trim()) newErrors.phone = "Phone is required"
-          else if (!/^\d{12}$/.test(newValue))
-            newErrors.phone = "Phone must be exactly 10 or 12 digits"
+          else if (!/^\d{10}$/.test(newValue))
+            newErrors.phone = "Phone must be exactly 10 digits"
           else delete newErrors.phone
           break
 
-        case "message":
-          if (!newValue.trim()) newErrors.message = "Message is required"
-          else delete newErrors.message
+        default:
           break
       }
 
@@ -67,26 +63,42 @@ export default function ContactPage() {
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!formData.email.trim()) newErrors.email = "Email is required"
-    else if (!emailRegex.test(formData.email)) newErrors.email = "Email is invalid"
+    else if (!emailRegex.test(formData.email))
+      newErrors.email = "Email is invalid"
 
-    const phoneRegex = /^\d{12}$/
+    const phoneRegex = /^\d{10}$/
     if (!formData.phone.trim()) newErrors.phone = "Phone is required"
     else if (!phoneRegex.test(formData.phone))
-      newErrors.phone = "Phone must be exactly 10 or 12 digits"
-
-    if (!formData.message.trim()) newErrors.message = "Message is required"
+      newErrors.phone = "Phone must be exactly 10 digits"
 
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
   }
 
   // Handle form submit
-  const handleSubmit = (e) => {
+  const [loading, setLoading] = useState(false)
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    if (validate()) {
-      alert("Form submitted successfully!")
-      setFormData({ name: "", email: "", phone: "", message: "" })
-      setErrors({})
+    if (!validate()) return
+    setLoading(true)
+    try {
+      const res = await SendThankYouMail(formData)
+      if (res.success) {
+        toast.success("Message sent successfully!")
+        setErrors({})
+      } else {
+        toast.error("Failed to send message. Please try again later.")
+      }
+    } catch (err) {
+      toast.error("An error occurred while sending the email.")
+    } finally {
+      setLoading(false)
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      })
     }
   }
 
@@ -98,56 +110,16 @@ export default function ContactPage() {
             <span className="big-circle"></span>
             <div className="form mx-auto">
               {/* Left Info Column */}
-              <div className="contact-info">
-                <h3 className="title">Lets get in touch</h3>
-                <p className="text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-                  dolorum adipisci recusandae praesentium dicta!
-                </p>
-
-                <div className="info">
-                  <div className="information">
-                    <FontAwesomeIcon icon={faMapMarkedAlt} />
-                    <p>92 Cherry Drive Uniondale, NY 11553</p>
-                  </div>
-                  <div className="information">
-                    <FontAwesomeIcon icon={faEnvelope} />
-                    <p>lorem@ipsum.com</p>
-                  </div>
-                  <div className="information">
-                    <FontAwesomeIcon icon={faPhone} />
-                    <p>123-456-789</p>
-                  </div>
-                </div>
-
-                <div className="social-media">
-                  <p>Connect with us :</p>
-                  <div className="social-icons">
-                    <Link href="#">
-                      <FontAwesomeIcon icon={faFacebook} />
-                    </Link>
-                    <Link href="#">
-                      <FontAwesomeIcon icon={faTwitter} />
-                    </Link>
-                    <Link href="#">
-                      <FontAwesomeIcon icon={faInstagram} />
-                    </Link>
-                    <Link href="#">
-                      <FontAwesomeIcon icon={faLinkedin} />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              {/* End Left Column */}
+              <ContactInfo />
 
               {/* Right Form Column */}
-              <div className="contact-form">
-                <span className="progress-row"></span>
-                <span className="circle one"></span>
-                <span className="circle two"></span>
-                <ContactForm formData={formData} errors={errors} handleChange={handleChange} handleSubmit={handleSubmit} />
-              </div>
-              {/* End Right Column */}
+              <ContactForm
+                loading={loading}
+                formData={formData}
+                errors={errors}
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+              />
             </div>
           </div>
         </div>

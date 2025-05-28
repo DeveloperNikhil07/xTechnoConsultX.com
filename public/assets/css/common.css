@@ -69,3 +69,23 @@
 .section-bg-gray {
     background-color: #f0f0f0;
 }
+
+.btn {
+    padding: 0.8rem 1.3rem;
+    background-color: var(--theme-color);
+    border: 1px solid var(--theme-color);
+    font-size: 1rem;
+    color: var(--white-color);
+    line-height: 1;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 0;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: var(--light-black-color);
+    color: #fff;
+}
