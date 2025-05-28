@@ -1,4 +1,5 @@
 import axios from "axios";
+
 const ApiBaseUrl = process.env.NEXT_PUBLIC_GETDATABYURL + '/api';
 
 export const GetWebsiteData = async () => {
